@@ -5,8 +5,7 @@ use crate::read_lines;
 use crate::util::char_at;
 
 pub(crate) fn prob3() {
-    let lns: Lines<BufReader<File>> = read_lines("./input/prob3.txt").unwrap();
-    let lines: Vec<String> = lns.map(|x| x.unwrap()).collect();
+    let lines: Vec<String> = read_lines("./input/prob3.txt");
     println!("{}", part1(lines.clone()));
     println!("{}", part2(lines.clone()));
 }
@@ -33,7 +32,6 @@ fn part2(lines: Vec<String>) -> i64 {
 // Otherwise, repeat the process, considering the next bit to the right.
 
 fn oxygen_rating(lines: Vec<String>) -> i64 {
-    lines.drain_filter(|x| x == "x".to_string());
     let mut lns: Vec<String> = lines.clone();
     let len:i32 = lns.get(0).unwrap().len() as i32;
     for col in 0..len {

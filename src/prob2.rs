@@ -4,8 +4,7 @@ use crate::read_lines;
 
 
 pub(crate) fn prob2() {
-    let lns: Lines<BufReader<File>> = read_lines("./input/prob2.txt").unwrap();
-    let lines: Vec<String> = lns.map(|x| x.unwrap()).collect();
+    let lines: Vec<String> = read_lines("./input/prob2.txt"); // lns.map(|x| x.unwrap()).collect();
     println!("{}", part1(lines.clone()));
     println!("{}", part2(lines.clone()));
 

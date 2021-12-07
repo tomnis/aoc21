@@ -4,8 +4,8 @@ use std::slice::Windows;
 use crate::read_lines;
 
 pub(crate) fn prob1() {
-    let lns: Lines<BufReader<File>> = read_lines("./input/prob1.txt").unwrap();
-    let nums: Vec<i32> = lns.map(|x| x.unwrap().parse().unwrap()).collect();
+    let lns: Vec<String> = read_lines("./input/prob1.txt");
+    let nums: Vec<i32> = lns.into_iter().map(|x| x.parse().unwrap()).collect();
     println!("{}", part1(nums.clone()));
     println!("{}", part2(nums.clone()));
 }
