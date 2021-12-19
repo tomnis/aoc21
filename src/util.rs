@@ -15,3 +15,23 @@ pub(crate) fn char_at(s: String, i: i32) -> char {
     let j: usize = i as usize;
     return s.get(j..j+1).unwrap().chars().collect::<Vec<char>>()[0];
 }
+
+
+pub(crate) fn parse_binary(bits: String) -> usize {
+    usize::from_str_radix(&*bits, 2).unwrap()
+}
+
+
+pub(crate) fn parse_binary_substring(bits: String, start: usize, end: usize) -> usize {
+    let substr: String = bits[start..end].to_string();
+    return parse_binary(substr);
+}
+
+// is a superset of b
+pub(crate) fn is_superset(a: String, b: String) -> bool {
+    return b.chars().all(|ch| a.contains(ch));
+}
+
+pub(crate) fn all_same_chars(a: String, b: String) -> bool {
+    return is_superset(a.clone(), b.clone()) && is_superset(b.clone(), a.clone());
+}

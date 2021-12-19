@@ -17,9 +17,7 @@ fn part1(lines: Vec<String>) -> i64 {
     let min_pos: i64 = crabs.clone().into_iter().min().unwrap();
     let max_pos: i64 = crabs.clone().into_iter().max().unwrap();
     let scores: Vec<i64> = (min_pos..(max_pos + 1)).into_iter().map(|pos| score(pos, crabs.clone())).collect();
-    // let min_score = min(scores.clone());
-    let min_score: i64 = scores.into_iter().min().unwrap();
-    return min_score;
+    return scores.into_iter().min().unwrap();
 }
 
 fn part2(lines: Vec<String>) -> i64 {

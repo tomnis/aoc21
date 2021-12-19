@@ -6,16 +6,22 @@ mod prob4;
 mod prob5;
 mod prob6;
 mod prob7;
+mod prob8;
+mod prob9;
+mod prob10;
+mod prob11;
+mod prob12;
+mod prob13;
+mod prob14;
+mod prob15;
+mod prob16;
 
 use util::read_lines;
-use crate::prob6::prob6;
+use crate::prob16::prob16;
 
 fn main() {
     println!("Hello, world!");
-    // prob1();
-    // prob2();
-    prob6();
-
+    prob16();
 }
 
 
