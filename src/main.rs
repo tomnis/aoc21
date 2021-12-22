@@ -15,13 +15,15 @@ mod prob13;
 mod prob14;
 mod prob15;
 mod prob16;
+mod prob17;
+mod prob18;
 
 use util::read_lines;
-use crate::prob16::prob16;
+use crate::prob18::prob18;
 
 fn main() {
     println!("Hello, world!");
-    prob16();
+    prob18();
 }
 
 

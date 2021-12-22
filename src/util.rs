@@ -11,7 +11,7 @@ pub(crate) fn read_lines<P>(filename: P) -> Vec<String> where P: AsRef<Path>, {
 }
 
 
-pub(crate) fn char_at(s: String, i: i32) -> char {
+pub(crate) fn char_at(s: String, i: usize) -> char {
     let j: usize = i as usize;
     return s.get(j..j+1).unwrap().chars().collect::<Vec<char>>()[0];
 }

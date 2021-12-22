@@ -41,7 +41,7 @@ fn oxygen_rating(lines: Vec<String>) -> i64 {
         if crit == '2' {
             crit = '1'
         }
-        lns = lns.into_iter().filter(|x| char_at(x.to_string(), col) == crit).collect();
+        lns = lns.into_iter().filter(|x| char_at(x.to_string(), col as usize) == crit).collect();
         println!("oxy len {}", lns.len());
         if lns.len() == 1 {
             return isize::from_str_radix(lns.get(0).unwrap(), 2).unwrap() as i64;
@@ -61,7 +61,7 @@ fn co2_scrubber_rating(lines: Vec<String>) -> i64 {
         if crit == '2' {
             crit = '0'
         }
-        lns = lns.into_iter().filter(|x| char_at(x.to_string(), col) == crit).collect();
+        lns = lns.into_iter().filter(|x| char_at(x.to_string(), col as usize) == crit).collect();
         println!("len {}", lns.len());
         if lns.len() == 1 {
             return isize::from_str_radix(lns.get(0).unwrap(), 2).unwrap() as i64;
@@ -110,7 +110,7 @@ fn most_common(col: i32, lines: Vec<String>) -> char {
     let mut num_zeros: i32 = 0;
     let mut num_ones: i32 = 0;
     for s in lines {
-        let ch: char = char_at(s.clone(), col);
+        let ch: char = char_at(s.clone(), col as usize);
         if ch == '0' {
             num_zeros += 1;
         }
@@ -140,7 +140,7 @@ fn least_common(col: i32, lines: Vec<String>) -> char {
     let mut num_ones: i32 = 0;
     for s in lines {
         // let ch: char = s.chars().get(col as usize).unwrap().into();
-        let ch: char = char_at(s.clone(), col);
+        let ch: char = char_at(s.clone(), col as usize);
         if ch == '0' {
             num_zeros += 1;
         }
